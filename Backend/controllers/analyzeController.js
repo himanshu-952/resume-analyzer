@@ -30,12 +30,11 @@ ${jobDescription}
     let analysis = result.response.text();
     analysis = analysis.replace(/\. /g, '.\n');
 
-    // Extract match percentage from analysis
     const match = analysis.match(/Match Percentage:\s*(\d{1,3})%/i);
     const matchPercentage = match ? parseInt(match[1]) : null;
     const rating = matchPercentage !== null ? matchPercentage : 0;
 
-    // Save to MongoDB (no userId)
+    
     const saved = await ResumeAnalysis.create({
       resumeText,
       jobDescription,

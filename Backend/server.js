@@ -21,10 +21,10 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB error:", err));
+  .then(() => console.log(" MongoDB connected"))
+  .catch((err) => console.error("MongoDB error:", err));
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log("Server Started");
 });
