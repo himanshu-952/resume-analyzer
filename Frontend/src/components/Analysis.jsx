@@ -11,14 +11,17 @@ function Analysis() {
   const handleAnalyze = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/analyze", {
-        resumeText,
-        jobDescription,
-      });
+      const response = await axios.post(
+        "https://resume-analyzer-backend-ksgn.onrender.com/api/analyze",
+        {
+          resumeText,
+          jobDescription,
+        }
+      );
       setAnalysisResult(response.data.analysis);
     } catch (error) {
       console.error("❌ Error analyzing resume:", error);
-      setAnalysisResult("Something went wrong. Please try again later."+`${error}`);
+      setAnalysisResult("Something went wrong. Please try again later. " + `${error}`);
     }
     setLoading(false);
   };
